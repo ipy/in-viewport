@@ -171,10 +171,10 @@ function createInViewport(container) {
     var visible =
       // 1. They must overlap
       !(
-        eltRect.right < containerRect.left ||
-        eltRect.left > containerRect.right ||
-        eltRect.bottom < containerRect.top ||
-        eltRect.top > containerRect.bottom
+        eltRect.right < containerRect.left - offset ||
+        eltRect.left > containerRect.right + offset ||
+        eltRect.bottom < containerRect.top - offset ||
+        eltRect.top > containerRect.bottom + offset
       ) && (
         // 2. They must be visible in the viewport
         pos.top <= viewport.height &&
